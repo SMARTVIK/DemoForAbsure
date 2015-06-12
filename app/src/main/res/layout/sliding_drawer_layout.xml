@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <include
+        android:id="@+id/app_bar"
+        layout="@layout/app_bar"></include>
+
+    <SlidingDrawer
+        android:id="@+id/slidingDrawer"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_below="@+id/app_bar"
+        android:allowSingleTap="true"
+        android:content="@+id/content"
+        android:gravity="center_horizontal"
+        android:handle="@+id/handle"
+        android:orientation="vertical"
+        android:rotation="180">
+
+        <LinearLayout
+            android:id="@+id/content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:rotation="180"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_abstract" />
+
+            <!--<ImageView-->
+            <!--android:id="@+id/imageView1"-->
+            <!--android:layout_width="100dp"-->
+            <!--android:layout_height="200dp"-->
+            <!--android:rotation="180"-->
+            <!--android:scaleType="centerCrop"-->
+            <!--android:src="@drawable/ic_abstract" />-->
+
+            <!--<ImageView-->
+            <!--android:id="@+id/imageView2"-->
+            <!--android:layout_width="100dp"-->
+            <!--android:layout_height="200dp"-->
+            <!--android:rotation="180"-->
+            <!--android:scaleType="centerCrop"-->
+            <!--android:src="@drawable/ic_abstract" />-->
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/handle"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:rotation="180" />
+    </SlidingDrawer>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/slidingDrawer"
+        android:layout_centerHorizontal="true"
+        android:text="button" />
+
+
+</RelativeLayout>
