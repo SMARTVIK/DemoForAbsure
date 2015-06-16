@@ -16,7 +16,9 @@ import android.widget.ProgressBar;
 /**
  * Created by user05 on 09-06-2015.
  */
-public class Test extends ActionBarActivity {
+
+
+public class ProgressBarTestActivity extends ActionBarActivity {
 
     private static final int PROGRESS = 0x1;
 
@@ -28,7 +30,7 @@ public class Test extends ActionBarActivity {
     protected void onCreate(Bundle savedInstance) {
         super.onCreate(savedInstance);
 
-        setContentView(R.layout.progressbar_custom);
+        setContentView(R.layout.progressbar_custom_layout);
 
         mProgress = (ProgressBar) findViewById(R.id.progressBar);
         mProgress.setMax(100);
@@ -45,7 +47,7 @@ public class Test extends ActionBarActivity {
 
         if(mProgressStatus>=0 && mProgressStatus<=25)
         {
-            mProgress.setProgressDrawable(resources.getDrawable(R.drawable.custom_progressbar));
+            mProgress.setProgressDrawable(resources.getDrawable(R.drawable.progress_start));
             mProgress.setProgress(mProgressStatus);
         }
         else  if(mProgressStatus>25 && mProgressStatus<=75)

@@ -2,19 +2,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context="com.cw.demorecyclerview.MainActivity" >
 
-    <include
-        android:id="@+id/tool_bar"
-        layout="@layout/app_bar"
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/cardList"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"></include>
-
-
-<FrameLayout
-    android:layout_below="@+id/tool_bar"
-    android:id="@+id/fragment_container"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"></FrameLayout>
+        android:layout_height="match_parent"
+        />
 
 </RelativeLayout>

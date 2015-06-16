@@ -10,28 +10,33 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.SlidingDrawer;
 
 /**
  * Created by user05 on 09-06-2015.
  */
 
-public class TestSlidingDrawer extends ActionBarActivity {
+public class SlidingDrawerTestActivity extends ActionBarActivity {
+
     private Toolbar toolbar;
     private SlidingDrawer drawer;
     Animation animationUp, animationLeft;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.sliding_drawer_layout);
         drawer = (SlidingDrawer) findViewById(R.id.slidingDrawer);
+
         animationUp = AnimationUtils.loadAnimation(this, R.anim.layout_up_animation);
         animationLeft = AnimationUtils.loadAnimation(this, R.anim.layout_left_animation);
+
         toolbar = (Toolbar) findViewById(R.id.app_bar);
         setSupportActionBar(toolbar);
         toolbar.setNavigationIcon(R.mipmap.ic_action);
+
 
 //        getSupportActionBar().setDisplayShowHomeEnabled(true);
 //        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -44,24 +49,45 @@ public class TestSlidingDrawer extends ActionBarActivity {
             }
         });
 
-        drawer.setOnDrawerScrollListener(new SlidingDrawer.OnDrawerScrollListener() {
-            @Override
-            public void onScrollStarted() {
-                drawer.startAnimation(animationUp);
-            }
+//        drawer.setOnDrawerScrollListener(new SlidingDrawer.OnDrawerScrollListener() {
+//            @Override
+//            public void onScrollStarted() {
+//                // drawer.startAnimation(animationUp);
+//            }
+//
+//            @Override
+//            public void onScrollEnded() {
+//
+//            }
+//        });
 
+
+        drawer.setOnDrawerOpenListener(new SlidingDrawer.OnDrawerOpenListener() {
             @Override
-            public void onScrollEnded() {
+            public void onDrawerOpened() {
+                animationUp.setDuration(2000);
+                drawer.startAnimation(animationUp);
 
             }
         });
+
+
+        drawer.setOnDrawerCloseListener(new SlidingDrawer.OnDrawerCloseListener() {
+            @Override
+            public void onDrawerClosed() {
+
+                drawer.startAnimation(animationUp);
+
+            }
+        });
+
+
         drawer.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 toolbar.setNavigationIcon(R.mipmap.ic_action);
                 drawer.animateClose();
             }
         });
-
     }
 
     private void closeDrawer()
@@ -69,10 +95,12 @@ public class TestSlidingDrawer extends ActionBarActivity {
         toolbar.setNavigationIcon(R.mipmap.ic_action);
         drawer.animateClose();
     }
+
+
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        startActivity(new Intent(TestSlidingDrawer.this,MainActivity.class));
+        startActivity(new Intent(SlidingDrawerTestActivity.this,SlidingTabTestActivity.class));
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -92,6 +120,7 @@ public class TestSlidingDrawer extends ActionBarActivity {
         if (id == R.id.action_settings) {
             return true;
         }
+
         else if (id ==android.R.id.home)
         {
             if(drawer.isOpened())
