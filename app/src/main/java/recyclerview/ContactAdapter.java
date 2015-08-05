@@ -135,11 +135,10 @@ public class ContactAdapter extends Adapter<ContactViewHolder> {
 //        YoYo.with(Techniques.Pulse).duration(700).playOn(contactViewHolder.vTitle);
 //        YoYo.with(Techniques.Pulse).duration(700).playOn(contactViewHolder.vSurname);
         int duration =500;
-        
-//        YoYo.with(Techniques.BounceIn).duration(duration).playOn(contactViewHolder.vEmail);
-//        YoYo.with(Techniques.BounceIn).duration(duration).playOn(contactViewHolder.vName);
-//        YoYo.with(Techniques.BounceIn).duration(duration).playOn(contactViewHolder.vTitle);
-//        YoYo.with(Techniques.BounceIn).duration(duration).playOn(contactViewHolder.vSurname);
+        YoYo.with(Techniques.BounceIn).duration(duration).playOn(contactViewHolder.vEmail);
+        YoYo.with(Techniques.BounceIn).duration(duration).playOn(contactViewHolder.vName);
+        YoYo.with(Techniques.BounceIn).duration(duration).playOn(contactViewHolder.vTitle);
+        YoYo.with(Techniques.BounceIn).duration(duration).playOn(contactViewHolder.vSurname);
 //        
    }
 

@@ -11,24 +11,34 @@
             android:name=".SlidingTabTestActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme">
-
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
         <activity android:name=".SlidingDrawerTestActivity">
 
         </activity>
 
-        <activity android:name=".ProgressBarTestActivity"></activity>
+        <activity android:name=".ProgressBarTestActivity">
+        </activity>
+
+        <activity android:name="recyclerview.TestActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
 
         <activity android:name=".DrawerToggleActivity"></activity>
 
-        <activity android:name="recyclerview.RecyclerViewTestActivity"></activity>
+        <activity android:name="recyclerview.RecyclerViewTestActivity">
 
-        <activity android:name="floatingactionbutton.FloatingActionButtonActivity"></activity>
+        </activity>
+
+        <activity android:name="floatingactionbutton.FloatingActionButtonActivity">
+
+
+
+        </activity>
 
     </application>
 
