@@ -15,4 +15,10 @@ public class TestActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.card_layout);
     }
+
+    public void initCalendar()
+    {
+
+
+    }
 }

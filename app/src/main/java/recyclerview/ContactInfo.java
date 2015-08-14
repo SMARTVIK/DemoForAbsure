@@ -1,7 +1,7 @@
 package recyclerview;
 
 public class ContactInfo {
-    protected String name;
+    public String name;
     protected String surname;
     protected String email;
     protected static final String NAME_PREFIX = "Name_";
