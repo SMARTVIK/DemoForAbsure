@@ -54,6 +54,13 @@
 
         <activity android:name="demos.LazyLoadingDemo">
 
+
+
+        </activity>
+
+
+        <activity android:name="demos.SomethingNew">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
